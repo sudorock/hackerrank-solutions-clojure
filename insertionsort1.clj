@@ -1,6 +1,5 @@
+;; start solution ;;
 
-
-; Complete the insertionSort1 function below.
 (defn prnstring [arr]
     (println (clojure.string/join " " arr)))
 
@@ -17,6 +16,8 @@
                                 (subvec arr 0 (dec cnt)) 
                                 (cons currEl right)))
                     :else (prnstring (into left (cons el right))))))))
+
+;; end solution ;;
 
 (def n (Integer/parseInt (clojure.string/trim (read-line))))
 
