@@ -14,7 +14,6 @@
                     (recur newLeft newCurr (cons currEl result)))
             :else (into (vec left) (cons el result)))))
 
-
 (defn insertionSort2 [arr]
     (loop [[fst & rst] arr result [] ctr 0]
         (if (nil? fst) 
