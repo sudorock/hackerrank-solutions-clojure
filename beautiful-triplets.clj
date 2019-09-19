@@ -1,3 +1,5 @@
+;; start solution ;;
+
 (defn beautifulTriplets [d arr]
     (let [freq (frequencies arr)]
         (loop [[fst & rst] (apply sorted-set arr) total 0]
@@ -12,6 +14,7 @@
                             (+ total (apply * (map freq [fst secondVal thirdVal]))))
                     :else (recur rst total))))))
 
+;; end solution ;;
 
 (def fptr (get (System/getenv) "OUTPUT_PATH"))
 
