@@ -3,7 +3,7 @@
 
 (defn prnstring [arr ctr]
     (when (> ctr 0)
-    (println (clojure.string/join " " arr))))
+        (println (clojure.string/join " " arr))))
 
 (defn insert-left [arr el]
     (loop [left arr currEl (peek left) result []]
