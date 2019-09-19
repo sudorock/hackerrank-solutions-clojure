@@ -15,7 +15,6 @@
         (if (nil? fst) 
             total 
             (let [[res tot] (vec (insert-left result fst))]
-                ;; (println result res)
                 (recur rst (vec res) (inc ctr) (+ total tot))))))
 
 (defn runningTime [arr]
