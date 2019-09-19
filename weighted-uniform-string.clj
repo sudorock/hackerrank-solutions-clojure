@@ -1,4 +1,5 @@
-; Complete the weightedUniformStrings function below.
+;; start solution ;;
+
 (defn weighted [s]
     (vec (map #(- (int %) 96) s)))
 
@@ -12,6 +13,8 @@
 (defn weightedUniformStrings [s queries]
     (let [res (uni-weights (weighted s))]
         (map #(if (contains? res %) "Yes" "No") queries)))
+
+;; end solution ;;
 
 (def fptr (get (System/getenv) "OUTPUT_PATH"))
 
