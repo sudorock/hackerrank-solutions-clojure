@@ -7,7 +7,6 @@
             (if (> newMaxD maxD) 
                 [el newMaxD]
                 [el maxD]))))
-    
 
 (defn flatlandSpaceStations [n c]
     (let [sorted (vec (sort c))]
