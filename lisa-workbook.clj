@@ -3,28 +3,28 @@
 (defn workbook [n k arr]
   (loop [page 1 start 1 end k chapter 0 special 0 ctr 1]
   (println "page" page "start" start "end" end "chapter" chapter "special" special)
-
-      (cond
-        (> chapter (dec n)) special
-        (> start (arr chapter)) 
-          (recur page 1 k (inc chapter) special 1)
-        (and (> end (arr chapter)) (>= page start) (<= page (arr chapter)))
-          (recur (inc page) 1 k (inc chapter) (inc special) 1)
-        (and (> end (arr chapter)) (not (and (>= page start) (<= page (arr chapter)))))
-          (recur (inc page) 1 k (inc chapter) special 1) 
-        (and (>= page start) (<= page end)) 
-          (recur (inc page) 
-                 (inc (* ctr k)) 
-                 (* (inc ctr) k) 
-                 chapter 
-                 (inc special) 
-                 (inc ctr))
-        :else 
-          (recur (inc page) 
-                 (inc (* ctr k)) 
-                 (* (inc ctr) k) 
-                 chapter special
-                 (inc ctr)))))
+    (cond
+      (> chapter (dec n)) special
+      (> start (arr chapter)) 
+        (recur page 1 k (inc chapter) special 1)
+      (and (> end (arr chapter)) (>= page start) (<= page (arr chapter)))
+        (recur (inc page) 1 k (inc chapter) (inc special) 1)
+      (and (> end (arr chapter)) (not (and (>= page start) (<= page (arr chapter)))))
+        (recur (inc page) 1 k (inc chapter) special 1) 
+      (and (>= page start) (<= page end)) 
+        (recur (inc page) 
+               (inc (* ctr k)) 
+               (* (inc ctr) k) 
+               chapter 
+               (inc special) 
+               (inc ctr))
+      :else 
+        (recur (inc page) 
+               (inc (* ctr k)) 
+               (* (inc ctr) k) 
+               chapter 
+               special
+               (inc ctr)))))
 
 ;; end solution ;;
 
